@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import { Button, Button2, Button3 } from "./components/Button";
 import Container from "./components/Container";
+import Box from "./components/Context/Box";
+import { ThemeContextProvider } from "./components/Context/ThemeContext";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
@@ -75,6 +77,10 @@ function App() {
       <User />
 
       <Counter />
+
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </div>
   );
 }
