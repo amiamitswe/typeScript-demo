@@ -4,6 +4,7 @@ import { Button, Button2, Button3 } from "./components/Button";
 import Container from "./components/Container";
 import Box from "./components/Context/Box";
 import { ThemeContextProvider } from "./components/Context/ThemeContext";
+import { UserContextProvider } from "./components/Context/UserContext";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
 import Input from "./components/Input";
@@ -12,7 +13,8 @@ import Person from "./components/Person";
 import PersonList from "./components/PersonList";
 import Counter from "./components/State/Counter";
 import Login from "./components/State/Login";
-import User from "./components/State/User";
+import UserState from "./components/State/User";
+import { User } from "./components/Context/User";
 import Status from "./components/Status";
 import { ButtonEvent, InputEvent } from "./types/common.types";
 
@@ -74,13 +76,17 @@ function App() {
       />
 
       <Login />
-      <User />
+      <UserState />
 
       <Counter />
 
       <ThemeContextProvider>
         <Box />
       </ThemeContextProvider>
+
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
     </div>
   );
 }
